@@ -1,0 +1,194 @@
+#LyX 1.6.6.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Setup
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+-dimensional parameter vector 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Scalar transformation functions 
+\begin_inset Formula $\left\{ f_{t}\right\} $
+\end_inset
+
+ so that 
+\begin_inset Formula $\theta_{t}'=f_{t}\left(\theta_{t}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\theta_{t}=f_{t}^{-1}\left(\theta_{t}'\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Likelihood as function of 
+\begin_inset Formula $\theta'$
+\end_inset
+
+ is 
+\begin_inset Formula $L\left(\theta'\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+First derivatives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\frac{\partial L}{\partial f_{t}\left(\theta_{t}\right)}=\frac{\partial L}{\partial\theta_{t}}\frac{1}{f'_{t}\left(\theta_{t}\right)}\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+\frac{\partial L}{\partial\theta_{t}}=\frac{\partial L}{\partial f_{t}\left(\theta_{t}\right)}f_{t}'\left(\theta_{t}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Second derivatives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)^{2}}=\left[\frac{\partial^{2}L}{\partial\theta_{t}^{2}}-\frac{\partial L}{\partial\theta_{t}}\frac{f_{t}''\left(\theta_{t}\right)}{f_{t}'\left(\theta_{t}\right)}\right]\left(\frac{1}{f_{t}'\left(\theta_{t}\right)}\right)^{2}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\frac{\partial^{2}L}{\partial\theta_{t}^{2}}=\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)^{2}}f_{t}'\left(\theta_{t}\right)^{2}+\frac{\partial L}{\partial f_{t}\left(\theta_{t}\right)}f_{t}''\left(\theta_{t}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)\partial f_{s}\left(\theta_{s}\right)}=\frac{\partial^{2}L}{\partial\theta_{t}\partial\theta_{s}}\frac{1}{f_{t}'\left(\theta_{t}\right)f_{s}'\left(\theta_{s}\right)}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\frac{\partial^{2}L}{\partial\theta_{t}\partial\theta_{s}}=\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)\partial f_{s}\left(\theta_{s}\right)}f_{t}'\left(\theta_{t}\right)f_{s}'\left(\theta_{s}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Algebra
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)^{2}} & = & \frac{\partial}{\partial f_{t}\left(\theta_{t}\right)}\left[\frac{\partial L}{\partial\theta_{t}}\frac{1}{f'\left(\theta_{t}\right)}\right]\\
+ & = & \frac{\partial^{2}L}{\partial\theta_{t}^{2}}\frac{\partial\theta_{t}}{\partial f_{t}\left(\theta_{t}\right)}\left(\frac{1}{f_{t}'\left(\theta_{t}\right)}\right)+\frac{\partial L}{\partial\theta_{t}}\left(\frac{\partial}{\partial f_{t}\left(\theta_{t}\right)}\frac{1}{f'_{t}\left(\theta_{t}\right)}\right)\\
+ & = & \frac{\partial^{2}L}{\partial\theta_{t}^{2}}\left(\frac{1}{f_{t}'\left(\theta_{t}\right)}\right)^{2}-\frac{\partial L}{\partial\theta_{t}}\left(\frac{1}{f_{t}'\left(\theta_{t}\right)}\right)^{2}\frac{\partial f_{t}'\left(\theta_{t}\right)}{\theta_{t}}\frac{\partial\theta_{t}}{\partial f_{t}\left(\theta_{t}\right)}\\
+ & = & \left[\frac{\partial^{2}L}{\partial\theta_{t}^{2}}-\frac{\partial L}{\partial\theta_{t}}\frac{f_{t}''\left(\theta_{t}\right)}{f_{t}'\left(\theta_{t}\right)}\right]\left(\frac{1}{f_{t}'\left(\theta_{t}\right)}\right)^{2}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\frac{\partial^{2}L}{\partial\theta_{t}^{2}} & = & \left[\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)^{2}}+\frac{\partial L}{\partial\theta_{t}}\frac{f_{t}''\left(\theta_{t}\right)}{f_{t}'\left(\theta_{t}\right)}\left(\frac{1}{f_{t}'\left(\theta_{t}\right)}\right)^{2}\right]f_{t}'\left(\theta_{t}\right)^{2}\\
+ & = & \frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)^{2}}f_{t}'\left(\theta_{t}\right)^{2}+\frac{\partial L}{\partial\theta_{t}}\frac{f_{t}''\left(\theta_{t}\right)}{f_{t}'\left(\theta_{t}\right)}\\
+ & = & \frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)^{2}}f_{t}'\left(\theta_{t}\right)^{2}+\frac{\partial L}{\partial f_{t}\left(\theta_{t}\right)}f_{t}''\left(\theta_{t}\right)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)\partial f_{s}\left(\theta_{s}\right)} & = & \frac{\partial}{\partial f_{s}\left(\theta_{s}\right)}\left[\frac{\partial L}{\partial\theta_{t}}\frac{1}{f'_{t}\left(\theta_{t}\right)}\right]\\
+ & = & \frac{\partial^{2}L}{\partial\theta_{t}\partial\theta_{s}}\frac{\partial\theta_{s}}{\partial f_{s}\left(\theta_{s}\right)}\frac{1}{f'_{t}\left(\theta_{t}\right)}+\frac{\partial L}{\partial\theta_{t}}\left(\frac{\partial}{\partial f_{s}\left(\theta_{s}\right)}\frac{1}{f'_{t}\left(\theta_{t}\right)}\right)\\
+ & = & \frac{\partial^{2}L}{\partial\theta_{t}\partial\theta_{s}}\frac{1}{f_{t}'\left(\theta_{t}\right)f_{s}'\left(\theta_{s}\right)}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\frac{\partial^{2}L}{\partial\theta_{t}\partial\theta_{s}}=\frac{\partial^{2}L}{\partial f_{t}\left(\theta_{t}\right)\partial f_{s}\left(\theta_{s}\right)}f_{t}'\left(\theta_{t}\right)f_{s}'\left(\theta_{s}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

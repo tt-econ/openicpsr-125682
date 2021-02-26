@@ -1,0 +1,358 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{setspace}
+\usepackage[bottom]{footmisc}
+\usepackage{amsfonts}
+\usepackage{pdflscape}
+\usepackage{amsmath}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\logit}{logit}
+\DeclareMathOperator{\I}{I}
+
+\DeclareMathOperator*{\argmax}{arg\,max} 
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+hanging
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Consider the case of two-step maximum likelihood estimation where the samples
+ are independent across the two steps.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+,
+\begin_inset Formula $\theta_{2}$
+\end_inset
+
+ be first and second step parameter (vectors) with 
+\begin_inset Formula $\hat{\theta}_{1}$
+\end_inset
+
+,
+\begin_inset Formula $\hat{\theta}_{2}$
+\end_inset
+
+ denoting their maximum likelihood estimators.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $L^{1}$
+\end_inset
+
+, 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ be first and second step likelihoods.
+\end_layout
+
+\begin_layout Standard
+Define the following elements of the (expected) hessian for each likelihood:
+\begin_inset Formula 
+\begin{eqnarray*}
+R_{1} & = & -\E\left(\frac{\partial^{2}L^{1}}{\partial\theta_{1}\partial\theta_{1}^{'}}\right)\\
+R_{2} & = & -\E\left(\frac{\partial^{2}L^{2}}{\partial\theta_{2}\partial\theta_{2}^{'}}\right)\\
+R_{3} & = & -\E\left(\frac{\partial^{2}L^{2}}{\partial\theta_{1}\partial\theta_{2}^{'}}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Define the following transformations of the first-order conditions for the
+ likelihood problem in each step:
+\begin_inset Formula 
+\begin{eqnarray*}
+FOC^{1} & = & \frac{1}{\sqrt{n}}\sum L_{1}^{1}\\
+FOC^{2} & = & \frac{1}{\sqrt{n}}\sum L_{2}^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Murphy and Topel (1987, equations 30-33) show that, asymptotically:
+\begin_inset Formula 
+\begin{eqnarray*}
+\sqrt{n}\left(\hat{\theta}_{1}-\theta_{1}\right) & = & -R_{1}^{-1}FOC^{1}\\
+\sqrt{n}\left(\hat{\theta}_{2}-\theta_{2}\right) & = & -R_{2}^{-1}FOC^{2}+R_{2}^{-1}R_{3}^{'}R_{1}^{-1}FOC^{1}
+\end{eqnarray*}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+FOC^{1}\\
+FOC^{2}
+\end{array}\right)\sim N\left(\left(\begin{array}{c}
+0\\
+0
+\end{array}\right),\left[\begin{array}{cc}
+R_{1} & 0\\
+0 & R_{2}
+\end{array}\right]\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows that, asymptotically:
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\sqrt{n}\left(\hat{\theta}_{2}-\theta_{2}\right)\\
+\sqrt{n}\left(\hat{\theta}_{1}-\theta_{1}\right)
+\end{array}\right)\sim N\left(\left(\begin{array}{c}
+0\\
+0
+\end{array}\right),\left[\begin{array}{cc}
+R_{2}^{-1}+R_{2}^{-1}R_{3}^{'}R_{1}^{-1}R_{3}R_{2}^{-1} & -R_{2}^{-1}R_{3}R_{1}^{-1}\\
+-R_{1}^{-1}R_{3}^{'}R_{2}^{-1} & R_{1}^{-1}
+\end{array}\right]\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $V_{1}=R_{1}^{-1}$
+\end_inset
+
+ be the asymptotic variance of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\hat{\theta}_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $V_{2}=R_{2}^{-1}$
+\end_inset
+
+ be the (naive) asymptotic variance of 
+\begin_inset Formula $\hat{\theta}_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $C=R_{3}^{'}$
+\end_inset
+
+ be the partial hessian of the second-step likelihood with respect to 
+\begin_inset Formula $\hat{\theta}_{2}$
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\hat{\theta}_{1}$
+\end_inset
+
+.
+ Then
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+\sqrt{n}\left(\hat{\theta}_{2}-\theta_{2}\right)\\
+\sqrt{n}\left(\hat{\theta}_{1}-\theta_{1}\right)
+\end{array}\right)\sim N\left(\left(\begin{array}{c}
+0\\
+0
+\end{array}\right),\left[\begin{array}{cc}
+V_{2}+V_{2}CV_{1}C'V_{2} & -V_{2}CV_{1}\\
+-V_{1}C^{'}V_{2} & V_{1}
+\end{array}\right]\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+ be the lengths of 
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{2}$
+\end_inset
+
+, respectively.
+ Then the dimensions of the above variance matrix are given by
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+\left(k_{2}\times k_{2}\right)+\left(k_{2}\times k_{2}\right)\left(k_{2}\times k_{1}\right)\left(k_{1}\times k_{1}\right)\left(k_{1}\times k_{2}\right)\left(k_{2}\times k_{2}\right) & \left(k_{2}\times k_{2}\right)\left(k_{2}\times k_{1}\right)\left(k_{1}\times k_{1}\right)\\
+\left(k_{1}\times k_{1}\right)\left(k_{1}\times k_{2}\right)\left(k_{2}\times k_{2}\right) & k_{1}\times k_{1}
+\end{array}\right]
+\]
+
+\end_inset
+
+which resolves to
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+\left(k_{2}\times k_{2}\right) & \left(k_{2}\times k_{1}\right)\\
+\left(k_{1}\times k_{2}\right) & k_{1}\times k_{1}
+\end{array}\right]
+\]
+
+\end_inset
+
+or 
+\begin_inset Formula $\left(k_{2}+k_{1}\right)\times\left(k_{2}+k_{1}\right)$
+\end_inset
+
+ as desired.
+\end_layout
+
+\end_body
+\end_document

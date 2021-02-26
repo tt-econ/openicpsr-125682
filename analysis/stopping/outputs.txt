@@ -1,0 +1,29 @@
+# Each line of instruction in this `outputs.txt` file should contain a destination and source delimited by a `|`.
+# Lines beginning with # are ignored.
+#
+# For example, suppose your `outputs.txt` file contains the following lines of text:
+# > destination | source
+#
+# Now suppose you run the following line of code:
+# > copy_link_outputs(paths, ['outputs.txt'])
+#
+# This will
+# 1) move `destination` in `paths['output_local_dir']` to `source`,
+# 2) create a symbolic link in `paths['output_local_dir']` named `destination` that points to the copied file in `source`.
+# The end result is that `destination` (in `paths['output_local_dir']`) is replaced by a symlink to its original content that is now moved to `source`.
+# Note that `paths['output_local_dir']` is ignored by Git by default as specified in .gitignore.
+
+# Destination | Source
+taxi_10h30m.dta | {root}/intermediate/analysis/taxi_10h30m.dta
+taxi_9h30m.dta | {root}/intermediate/analysis/taxi_9h30m.dta
+taxi_8h30m.dta | {root}/intermediate/analysis/taxi_8h30m.dta
+taxi_7h30m.dta | {root}/intermediate/analysis/taxi_7h30m.dta
+taxi_6h30m.dta | {root}/intermediate/analysis/taxi_6h30m.dta
+taxi_5h30m.dta | {root}/intermediate/analysis/taxi_5h30m.dta
+taxi_4h30m.dta | {root}/intermediate/analysis/taxi_4h30m.dta
+taxi_10h.dta | {root}/intermediate/analysis/taxi_10h.dta
+taxi_9h.dta | {root}/intermediate/analysis/taxi_9h.dta
+taxi_8h.dta | {root}/intermediate/analysis/taxi_8h.dta
+taxi_7h.dta | {root}/intermediate/analysis/taxi_7h.dta
+taxi_6h.dta | {root}/intermediate/analysis/taxi_6h.dta
+taxi_5h.dta | {root}/intermediate/analysis/taxi_5h.dta

@@ -1,0 +1,10 @@
+# Required by ttmake
+pyyaml
+gitpython
+termcolor
+colorama
+jupyter
+future
+nbformat
+nbconvert
+

@@ -1,0 +1,16 @@
+# Each line of instruction in this `outputs.txt` file should contain a destination and source delimited by a `|`.
+# Lines beginning with # are ignored.
+#
+# For example, suppose your `outputs.txt` file contains the following lines of text:
+# > destination | source
+#
+# Now suppose you run the following line of code:
+# > copy_link_outputs(paths, ['outputs.txt'])
+#
+# This will
+# 1) move `destination` in `paths['output_local_dir']` to `source`,
+# 2) create a symbolic link in `paths['output_local_dir']` named `destination` that points to the copied file in `source`.
+# The end result is that `destination` (in `paths['output_local_dir']`) is replaced by a symlink to its original content that is now moved to `source`.
+# Note that `paths['output_local_dir']` is ignored by Git by default as specified in .gitignore.
+
+# Destination | Source

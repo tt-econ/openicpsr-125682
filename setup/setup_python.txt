@@ -1,0 +1,4 @@
+# Required for the project Python code
+numpy
+pandas
+matplotlib

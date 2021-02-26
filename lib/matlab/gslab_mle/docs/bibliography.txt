@@ -1,0 +1,7 @@
+Andrews, Donald W.K. 1987. Asymptotic Results for Generalized Wald Tests. Econometric Theory 3(3): 348-350.
+Greene, William H. and Terry G. Seaks. 1991. The Restricted Least Squares Estimator: A Pedagogical Note. Review of Economics and Statistics 73(3): 563-567.
+Greene, William H. 2012. Econometric Analysis: Seventh Edition. New York: Prentice Hall.
+Moore, David S. 1977. Generalized Inverses, Wald's Method, and the Construction of Chi-Squared Tests of Fit. Journal of the American Statistical Association 72(357): 131-137.
+Murphy, Kevin M. and Robert S. Topel. 1987. Estimation and Inference in Two-Step Econometric Models. Journal of Business and Economic Statistics 20(1): 88-97.
+Schoenberg, Ronald. 1997. Constrained Maximum Likelihood. Computational Economics 10(3): 251-266.
+Train, Kenneth. 2009. Discrete Choice Methods with Simulation: Second Edition. Cambridge, UK: Cambridge University Press.
