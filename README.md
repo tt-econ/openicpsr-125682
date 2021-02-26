@@ -4,11 +4,13 @@
 
 ### Data
 
-There are two sources of data for this study, both of which are available in this replication package in `/raw`:
+There are two sources of data for this study, both of which are available in `/raw` from [openICPSR](https://doi.org/10.3886/E125682V1):
 
 1. Trip-level records on cab fares from the New York City (NYC) Taxi and Limousine Commission.
 
 2. Minute-level weather conditions collected at five locations around NYC from the National Centers for Environmental Information.
+
+If the `/raw` folder is not yet populated, please add the folder from the [openICPSR](https://doi.org/10.3886/E125682V1) link to the root of the replication package.
 
 ### Code
 
